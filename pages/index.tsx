@@ -13,7 +13,7 @@ const currentYear = new Date(Date.now()).getFullYear();
 const App = () => {
   useRender(() => { document.title = 'Tech World for All - Empoderando o futuro, juntos.'; });
 
-  const isSmallScreen = useMediaQuery('(max-width: 56.75rem)');
+  const isSmallScreen = useMediaQuery('(max-width: 56.25rem)');
 
   return (
     <Box

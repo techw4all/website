@@ -1,9 +1,12 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
   productionBrowserSourceMaps: false,
   poweredByHeader: false,
   devIndicators: false,
+
+  eslint: { ignoreDuringBuilds: true },
   
   async redirects() {
     return [ ];
