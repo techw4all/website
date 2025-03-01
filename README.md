@@ -1,10 +1,10 @@
 # Tech World for All
 
-Bem-vindo ao repositório **TechW4All**! Aqui você encontra o código-fonte do nosso site oficial:  [website](https://w4io.com).
+Bem-vindo ao repositório **@TechW4All/website**! Aqui você encontra o código-fonte do nosso site oficial:  [website](https://w4io.com).
 
 
 ## Sobre
-O Tech World para Todos é um time de desenvolvimento de software idealizada para oferecer soluções modernas, acessíveis e de baixo custo para todos. Nosso objetivo é desenvolver tecnologias que impactem positivamente a vida das pessoas, tornando o mundo digital mais inclusivo e eficiente.
+O Tech World para Todos é um time de desenvolvimento de software idealizado para oferecer soluções modernas, acessíveis e de baixo custo para todos. Nosso objetivo é desenvolver tecnologias que impactem positivamente a vida das pessoas, tornando o mundo digital mais inclusivo e eficiente.
 
 
 ## Recursos
@@ -31,6 +31,7 @@ Certifique-se de ter os seguintes programas instalados no seu sistema:
    npm install
    ```
    ou
+
    ```sh
    yarn install
    ```
@@ -39,6 +40,7 @@ Certifique-se de ter os seguintes programas instalados no seu sistema:
    npm run dev
    ```
    ou
+   
    ```sh
    yarn dev
    ```
