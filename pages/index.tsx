@@ -1,12 +1,18 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
-import { useMediaQuery } from '@/hooks';
+import LogoImage from '@/components/svg/LogoImage';
+import { useMediaQuery, useRender } from '@/hooks';
 import { Container, Icon, Button, Typography } from '@/components';
 import { emailAddress, phoneNumber } from '@/resources/static/contact';
 
 
+const currentYear = new Date(Date.now()).getFullYear();
+
+
 const App = () => {
+  useRender(() => { document.title = 'Tech World for All - Empoderando o futuro, juntos.'; });
+
   const isSmallScreen = useMediaQuery('(max-width: 56.75rem)');
 
   return (
@@ -35,10 +41,25 @@ const App = () => {
             position: 'absolute',
             top: '1rem',
             left: '1.1rem',
-            color: 'white',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem',
+
+            '& > svg': {
+              width: '55px',
+              height: 'auto',
+            },
+
+            '& > span': {
+              fontSize: '1.65rem',
+              fontWeight: 700,
+              color: 'var(--theme-color)',
+              letterSpacing: 'calc(var(--default-letter-spacing) / 1.5)',
+            },
           }}
         >
-          LOGO_HERE
+          <LogoImage />
+          <Typography.Text>TechW4All</Typography.Text>
         </Box>
         <div className="row">
           <div className="col-6 col-md-12 col-sm-12">
@@ -87,11 +108,11 @@ const App = () => {
               sx={{
                 width: '100%',
                 maxWidth: '680px',
-                margin: isSmallScreen ? '0 auto' : '3em auto',
+                margin: isSmallScreen ? '0 auto' : '4.2em auto',
                 height: '100svh',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: isSmallScreen ? 'flex-start' : 'center',
                 flexDirection: 'column',
                 gap: '2rem',
                 padding: '1rem 1.1rem',
@@ -235,7 +256,7 @@ const App = () => {
                   title="Veja nosso perfil no LinkedIn"
                   sx={{ '--clr': '#0077b5', '--txt': '#fefeff', '--sd': '#0077b54a' }}
                   onClick={() => {
-                    window.open('#', '_blank', 'noopener,noreferrer');
+                    window.open('https://www.linkedin.com/in/tech-world-for-all-team-85bb92353', '_blank', 'noopener,noreferrer');
                   }}
                 >
                   <span className="icon-default">
@@ -249,7 +270,7 @@ const App = () => {
                   title="Veja nosso perfil no X (antigo Twitter)" // #1DA1F2
                   sx={{ '--clr': '#000000', '--txt': '#fefeff', '--sd': '#1DA1F24a' }}
                   onClick={() => {
-                    window.open('#', '_blank', 'noopener,noreferrer');
+                    window.open('https://x.com/TechW4All', '_blank', 'noopener,noreferrer');
                   }}
                 >
                   <span className="icon-default">
@@ -279,7 +300,7 @@ const App = () => {
                       title="Fale conosco no WhatsApp"
                       sx={{ '--clr': '#25D366', '--txt': '#fefeff', '--sd': '#25D3664a' }}
                       onClick={() => {
-                        window.open('#', '_blank', 'noopener,noreferrer');
+                        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent('Olá!\nEu gostaria de falar com alguém do time TechW4All, por favor.')}`, '_blank', 'noopener,noreferrer');
                       }}
                     >
                       <span className="icon-default">
@@ -315,7 +336,7 @@ const App = () => {
                       marginTop: '1.5rem',
                       width: 'max-content',
                       fontSize: '1rem',
-                      fontWeight: 'normal',
+                      fontWeight: 300,
                       letterSpacing: 'calc(var(--default-letter-spacing) / 2)',
                       color: 'var(--text-color)',
                       position: 'relative',
@@ -334,7 +355,11 @@ const App = () => {
                       },
 
                       '&:not(span)': {
-                        userSelect: 'text',
+                        userSelect: 'all',
+                      },
+
+                      '& > span': {
+                        fontWeight: 'normal',
                       },
                     },
                   },
@@ -365,6 +390,29 @@ const App = () => {
                     ) : null
                   }
                 </div>
+              </Box>
+              <Box
+                sx={{
+                  width: '100%',
+                  marginTop: '1.5rem',
+                  paddingTop: '1rem',
+                  borderTop: '1px solid #555555',
+
+                  '& > span': {
+                    display: 'inline-block',
+                    textAlign: 'center',
+                    color: 'var(--muted-text-color)',
+                    fontSize: '.9rem',
+                    fontWeight: 300,
+                    letterSpacing: 'calc(var(--default-letter-spacing) / 3)',
+                    width: '100%',
+                    userSelect: 'text',
+                  },
+                }}
+              >
+                <Typography.Text>
+                  &copy; {currentYear} Tech World for All Software Development & IT Services. Todos os direitos reservados.
+                </Typography.Text>
               </Box>
             </Box>
           </div>

@@ -169,6 +169,5 @@ yarn*
 !/docker/docker-compose*.yaml
 
 .vscode/**/*
-!.vscode/settings.json
 
 *test.ts*

@@ -4,7 +4,7 @@ Bem-vindo ao repositório **@TechW4All/website**! Aqui você encontra o código-
 
 
 ## Sobre
-O Tech World para Todos é um time de desenvolvimento de software idealizado para oferecer soluções modernas, acessíveis e de baixo custo para todos. Nosso objetivo é desenvolver tecnologias que impactem positivamente a vida das pessoas, tornando o mundo digital mais inclusivo e eficiente.
+O _Tech World for All_ é um time de desenvolvimento de software idealizado para oferecer soluções modernas, acessíveis e de baixo custo para todos. Nosso objetivo é desenvolver tecnologias que impactem positivamente a vida das pessoas, tornando o mundo digital mais inclusivo e eficiente.
 
 
 ## Recursos
