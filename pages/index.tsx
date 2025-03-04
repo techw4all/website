@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import LogoImage from '@/components/svg/LogoImage';
 import { useMediaQuery, useRender } from '@/hooks';
 import { Container, Icon, Button, Typography } from '@/components';
-import { emailAddress, linkedin } from '@/resources/static/contact';
+import { emailAddress, instagram, linkedin } from '@/resources/static/contact';
 
 
 const currentYear = new Date(Date.now()).getFullYear();
@@ -284,20 +284,24 @@ const App = () => {
                     <Icon icon="bx-twitter" />
                   </span>
                 </Button>
-                <Button
-                  title="Veja nosso perfil no Instagram"
-                  sx={{ '--clr': '#e4405f', '--txt': '#fefeff', '--sd': '#e4405f4a' }}
-                  onClick={() => {
-                    window.open('https://instagram.com/_t.world4all_team', '_blank', 'noopener,noreferrer');
-                  }}
-                >
-                  <span className="icon-default">
-                    <Icon icon="bx-ig" />
-                  </span>
-                  <span className="icon-hover">
-                    <Icon icon="bx-ig" />
-                  </span>
-                </Button>
+                {
+                  instagram ? (
+                    <Button
+                      title="Veja nosso perfil no Instagram"
+                      sx={{ '--clr': '#e4405f', '--txt': '#fefeff', '--sd': '#e4405f4a' }}
+                      onClick={() => {
+                        window.open(`https://instagram.com/${instagram}`, '_blank', 'noopener,noreferrer');
+                      }}
+                    >
+                      <span className="icon-default">
+                        <Icon icon="bx-ig" />
+                      </span>
+                      <span className="icon-hover">
+                        <Icon icon="bx-ig" />
+                      </span>
+                    </Button>
+                  ) : null
+                }
                 {
                   process.env.NEXT_PUBLIC_CONTACT_PHONE ? (
                     <Button
