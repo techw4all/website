@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
+import { Button, Icon, Typography } from '@/components';
+
 
 const NotFound = () => {
   return (
@@ -31,7 +33,7 @@ const NotFound = () => {
             display: 'inline-block',
             margin: '0 20px 0 0',
             paddingRight: '23px',
-            fontSize: '24px',
+            fontSize: 'calc(2rem - 8px)',
             fontWeight: 500,
             verticalAlign: 'top',
 
@@ -41,7 +43,7 @@ const NotFound = () => {
           },
 
           '& > h2': {
-            fontSize: '14px',
+            fontSize: '1rem',
             fontWeight: 'normal',
             lineHeight: '28px',
             display: 'grid',
@@ -53,9 +55,55 @@ const NotFound = () => {
           404
         </h1>
         <h2>
-          Ops! I don&apos;t known where you want to go...
+          Ops! Não sei para onde você quer ir...
         </h2>
       </Box>
+      <Button
+        variant="discreet"
+        onClick={() => { window.location.href = '/'; }}
+        sx={{
+          marginTop: '2rem',
+          cursor: 'pointer',
+          background: 'transparent',
+          border: '1px solid transparent',
+          outline: 'none',
+          padding: '.32rem .78rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'var(--text-color) !important',
+          gap: '.7rem',
+
+          '@media (prefers-color-scheme: dark)': {
+            color: '#fefeff !important',
+          },
+
+          '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, .11)',
+          },
+
+          '& > .icon': {
+            fontSize: '22px',
+            fontWeight: 300,
+            color: 'unset',
+          },
+
+          '& > span': {
+            fontSize: '.9rem',
+            fontWeight: 'normal',
+            letterSpacing: 'calc(var(--default-letter-spacing) / 2)',
+            paddingRight: '.32rem',
+            color: 'unset',
+            display: 'inline-block',
+            marginTop: '2px',
+          },
+        }}
+      >
+        <Icon icon="arrow-back" />
+        <Typography.Text>
+          Voltar
+        </Typography.Text>
+      </Button>
     </Box>
   );
 };

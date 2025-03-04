@@ -36,7 +36,8 @@ const DEFAULT_SX: Dict<SxProps> = {
   },
 };
 
-const UNICODE_DICT = {
+const UNICODE_SET = {
+  // box icons
   'bx-error': '"\\eac5"',
   'bx-bell': '"\\e9d2"',
   'bxs-bell': '"\\ecc9"',
@@ -55,9 +56,7 @@ const UNICODE_DICT = {
   'bx-menu': '"\\eb5f"',
   'box-focus': '"\\e9fe"',
   'bx-shape-square': '"\\ec00"',
-  'power-plug': '"\\e63c"',
   'bx-cog': '"\\ea6e"',
-  'arrow-back': '"\\e5c4"',
   'bx-arrow-back': '"\\e9b4"',
   'bx-chevron-left': '"\\ea4d"',
   'bx-plus': '"\\ebc0"',
@@ -76,7 +75,6 @@ const UNICODE_DICT = {
   'bx-link': '"\\eb3c"',
   'bx-link-alt': '"\\eb3d"',
   'bx-key': '"\\eb28"',
-  'lock-open': '"\\e898"',
   'bx-play-arrow': '"\\ebbd"',
   'bx-server': '"\\ebfd"',
   'bx-check': '"\\ea41"',
@@ -92,6 +90,10 @@ const UNICODE_DICT = {
   'bx-linkedin-square': '"\\e94e"',
   'bx-whatsapp': '"\\e98a"',
   'bx-twitter': '"\\e982"',
+
+  // google fonts icons
+  'arrow-back': '"\\e5c4"',
+  'lock-open': '"\\e898"',
 };
 
 const UNICODE_ICON_ALIAS = {};
@@ -100,7 +102,7 @@ const UNICODE_ICON_ALIAS = {};
 
 export interface IconProps extends HTMLAttributes<HTMLElement> {
   provider?: 'boxicons' | 'fonts.google';
-  icon?: keyof typeof UNICODE_DICT | keyof typeof UNICODE_ICON_ALIAS;
+  icon?: keyof typeof UNICODE_SET | keyof typeof UNICODE_ICON_ALIAS;
 }
 
 
@@ -130,7 +132,7 @@ const Icon = forwardRef<HTMLElement, IconProps>(({ provider, icon, className, co
       className={cn('icon', 'drawer-ui-icon-element', className)}
       sx={Object.assign({}, {
         '&::before': {
-          content: UNICODE_DICT[i as unknown as keyof typeof UNICODE_DICT],
+          content: UNICODE_SET[i as unknown as keyof typeof UNICODE_SET],
         },
 
         color,

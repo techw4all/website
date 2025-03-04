@@ -3,8 +3,8 @@ import { Box } from '@mui/material';
 
 import LogoImage from '@/components/svg/LogoImage';
 import { useMediaQuery, useRender } from '@/hooks';
+import { emailAddress } from '@/resources/static/contact';
 import { Container, Icon, Button, Typography } from '@/components';
-import { emailAddress, phoneNumber } from '@/resources/static/contact';
 
 
 const currentYear = new Date(Date.now()).getFullYear();
@@ -284,7 +284,7 @@ const App = () => {
                   title="Veja nosso perfil no Instagram"
                   sx={{ '--clr': '#e4405f', '--txt': '#fefeff', '--sd': '#e4405f4a' }}
                   onClick={() => {
-                    window.open('https://instagram.com/techw4all', '_blank', 'noopener,noreferrer');
+                    window.open('https://instagram.com/_t.world4all_team', '_blank', 'noopener,noreferrer');
                   }}
                 >
                   <span className="icon-default">
@@ -295,12 +295,12 @@ const App = () => {
                   </span>
                 </Button>
                 {
-                  phoneNumber ? (
+                  process.env.NEXT_PUBLIC_CONTACT_PHONE ? (
                     <Button
                       title="Fale conosco no WhatsApp"
                       sx={{ '--clr': '#25D366', '--txt': '#fefeff', '--sd': '#25D3664a' }}
                       onClick={() => {
-                        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent('Olá!\nEu gostaria de falar com alguém do time TechW4All, por favor.')}`, '_blank', 'noopener,noreferrer');
+                        window.open(`https://wa.me/${process.env.NEXT_PUBLIC_CONTACT_PHONE?.replace(/\D/g, '')}?text=${encodeURIComponent('Olá!\nEu gostaria de falar com alguém do time TechW4All, por favor.')}`, '_blank', 'noopener,noreferrer');
                       }}
                     >
                       <span className="icon-default">
@@ -380,12 +380,12 @@ const App = () => {
                     ) : null
                   }
                   {
-                    phoneNumber ? (
+                    process.env.NEXT_PUBLIC_CONTACT_PHONE ? (
                       <Typography.Text
                         component="p"
                         sx={{ '--clr': '#25D366' }}
                       >
-                        <span>Telefone{isSmallScreen ? '' : ' (preferencialmente WhatsApp)'}: </span> {phoneNumber}
+                        <span>Telefone{isSmallScreen ? '' : ' (preferencialmente WhatsApp)'}: </span> {process.env.NEXT_PUBLIC_CONTACT_PHONE}
                       </Typography.Text>
                     ) : null
                   }
