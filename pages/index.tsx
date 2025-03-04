@@ -3,8 +3,8 @@ import { Box } from '@mui/material';
 
 import LogoImage from '@/components/svg/LogoImage';
 import { useMediaQuery, useRender } from '@/hooks';
-import { emailAddress } from '@/resources/static/contact';
 import { Container, Icon, Button, Typography } from '@/components';
+import { emailAddress, linkedin } from '@/resources/static/contact';
 
 
 const currentYear = new Date(Date.now()).getFullYear();
@@ -252,20 +252,24 @@ const App = () => {
                     <Icon icon="bx-github" />
                   </span>
                 </Button>
-                <Button
-                  title="Veja nosso perfil no LinkedIn"
-                  sx={{ '--clr': '#0077b5', '--txt': '#fefeff', '--sd': '#0077b54a' }}
-                  onClick={() => {
-                    window.open('https://www.linkedin.com/in/tech-world-for-all-team-85bb92353', '_blank', 'noopener,noreferrer');
-                  }}
-                >
-                  <span className="icon-default">
-                    <Icon icon="bx-linkedin" />
-                  </span>
-                  <span className="icon-hover">
-                    <Icon icon="bx-linkedin" />
-                  </span>
-                </Button>
+                {
+                  linkedin ? (
+                    <Button
+                      title="Veja nosso perfil no LinkedIn"
+                      sx={{ '--clr': '#0077b5', '--txt': '#fefeff', '--sd': '#0077b54a' }}
+                      onClick={() => {
+                        window.open(`https://www.linkedin.com/in/${linkedin}`, '_blank', 'noopener,noreferrer');
+                      }}
+                    >
+                      <span className="icon-default">
+                        <Icon icon="bx-linkedin" />
+                      </span>
+                      <span className="icon-hover">
+                        <Icon icon="bx-linkedin" />
+                      </span>
+                    </Button>
+                  ) : null
+                }
                 <Button
                   title="Veja nosso perfil no X (antigo Twitter)" // #1DA1F2
                   sx={{ '--clr': '#000000', '--txt': '#fefeff', '--sd': '#1DA1F24a' }}
