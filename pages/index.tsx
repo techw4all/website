@@ -55,11 +55,13 @@ const App = () => {
               fontWeight: 700,
               color: 'var(--theme-color)',
               letterSpacing: 'calc(var(--default-letter-spacing) / 1.5)',
+              display: 'inline-block',
+              marginTop: '1rem',
             },
           }}
         >
           <LogoImage />
-          <Typography.Text>TechW4All</Typography.Text>
+          <Typography.Text>TechWorld4All</Typography.Text>
         </Box>
         <div className="row">
           <div className="col-6 col-md-12 col-sm-12">
