@@ -55,6 +55,8 @@ const App = () => {
               fontWeight: 700,
               color: 'var(--theme-color)',
               letterSpacing: 'calc(var(--default-letter-spacing) / 1.5)',
+              display: 'inline-block',
+              marginTop: '1rem',
             },
           }}
         >
