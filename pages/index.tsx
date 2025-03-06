@@ -59,7 +59,7 @@ const App = () => {
           }}
         >
           <LogoImage />
-          <Typography.Text>TechW4All</Typography.Text>
+          <Typography.Text>TechWorld4All</Typography.Text>
         </Box>
         <div className="row">
           <div className="col-6 col-md-12 col-sm-12">
