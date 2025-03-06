@@ -310,7 +310,7 @@ const App = () => {
                       title="Fale conosco no WhatsApp"
                       sx={{ '--clr': '#25D366', '--txt': '#fefeff', '--sd': '#25D3664a' }}
                       onClick={() => {
-                        window.open(`https://wa.me/${process.env.NEXT_PUBLIC_CONTACT_PHONE?.replace(/\D/g, '')}?text=${encodeURIComponent('Olá!\nEu gostaria de falar com alguém do time TechW4All, por favor.')}`, '_blank', 'noopener,noreferrer');
+                        window.open(`https://api.whatsapp.com/send?phone=${process.env.NEXT_PUBLIC_CONTACT_PHONE?.replace(/\D/g, '')}&text=${encodeURIComponent('Olá!\nEu gostaria de falar com alguém do time TechW4All, por favor.')}`, '_blank', 'noopener,noreferrer');
                       }}
                     >
                       <span className="icon-default">
