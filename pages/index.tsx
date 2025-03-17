@@ -305,12 +305,12 @@ const App = () => {
                   ) : null
                 }
                 {
-                  process.env.NEXT_PUBLIC_CONTACT_PHONE ? (
+                  process.env.NEXT_PUBLIC_CONTACT_PHONE && process.env.NEXT_PUBLIC_CONTACT_WP_MESSAGE ? (
                     <Button
                       title="Fale conosco no WhatsApp"
                       sx={{ '--clr': '#25D366', '--txt': '#fefeff', '--sd': '#25D3664a' }}
                       onClick={() => {
-                        window.open(`https://api.whatsapp.com/send?phone=${process.env.NEXT_PUBLIC_CONTACT_PHONE?.replace(/\D/g, '')}&text=${encodeURIComponent('Olá!\nEu gostaria de falar com alguém do time TechW4All, por favor.')}`, '_blank', 'noopener,noreferrer');
+                        window.open(`https://api.whatsapp.com/send?phone=${process.env.NEXT_PUBLIC_CONTACT_PHONE?.replace(/\D/g, '')}&text=${encodeURIComponent(process.env.NEXT_PUBLIC_CONTACT_WP_MESSAGE!)}`, '_blank', 'noopener,noreferrer');
                       }}
                     >
                       <span className="icon-default">
@@ -395,7 +395,7 @@ const App = () => {
                         component="p"
                         sx={{ '--clr': '#25D366' }}
                       >
-                        <span>Telefone{isSmallScreen ? '' : ' (preferencialmente WhatsApp)'}: </span> {process.env.NEXT_PUBLIC_CONTACT_PHONE}
+                        <span>Telefone{isSmallScreen ? '' : ' (preferencialmente WhatsApp)'}: </span> {process.env.NEXT_PUBLIC_CONTACT_PHONE.replace(/^\+[0-9]{1,4}/, '')}
                       </Typography.Text>
                     ) : null
                   }
