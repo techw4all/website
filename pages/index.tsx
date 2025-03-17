@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
-import LogoImage from '@/components/svg/LogoImage';
 import { useMediaQuery, useRender } from '@/hooks';
 import { Container, Icon, Button, Typography } from '@/components';
+import HighContrastLogoImage from '@/components/svg/HighContrastLogoImage';
 import { emailAddress, instagram, linkedin } from '@/resources/static/contact';
 
 
@@ -53,14 +53,14 @@ const App = () => {
             '& > span': {
               fontSize: '1.65rem',
               fontWeight: 700,
-              color: 'var(--theme-color)',
+              color: '#9b0eff',
               letterSpacing: 'calc(var(--default-letter-spacing) / 1.5)',
               display: 'inline-block',
               marginTop: '1rem',
             },
           }}
         >
-          <LogoImage />
+          <HighContrastLogoImage />
           <Typography.Text>TechWorld4All</Typography.Text>
         </Box>
         <div className="row">
