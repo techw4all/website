@@ -3,8 +3,8 @@ import { Box } from '@mui/material';
 
 import { useMediaQuery, useRender } from '@/hooks';
 import { Container, Icon, Button, Typography } from '@/components';
+import { emailAddress, instagram } from '@/resources/static/contact';
 import HighContrastLogoImage from '@/components/svg/HighContrastLogoImage';
-import { emailAddress, instagram, linkedin } from '@/resources/static/contact';
 
 
 const currentYear = new Date(Date.now()).getFullYear();
@@ -255,12 +255,12 @@ const App = () => {
                   </span>
                 </Button>
                 {
-                  linkedin ? (
+                  process.env.NEXT_PUBLIC_LINKEDIN_PROFILE_NAME ? (
                     <Button
                       title="Veja nosso perfil no LinkedIn"
                       sx={{ '--clr': '#0077b5', '--txt': '#fefeff', '--sd': '#0077b54a' }}
                       onClick={() => {
-                        window.open(`https://www.linkedin.com/in/${linkedin}`, '_blank', 'noopener,noreferrer');
+                        window.open(`https://www.linkedin.com/in/${process.env.NEXT_PUBLIC_LINKEDIN_PROFILE_NAME}`, '_blank', 'noopener,noreferrer');
                       }}
                     >
                       <span className="icon-default">
