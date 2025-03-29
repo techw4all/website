@@ -2,8 +2,8 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 import { useMediaQuery, useRender } from '@/hooks';
+import { emailAddress } from '@/resources/static/contact';
 import { Container, Icon, Button, Typography } from '@/components';
-import { emailAddress, instagram } from '@/resources/static/contact';
 import HighContrastLogoImage from '@/components/svg/HighContrastLogoImage';
 
 
@@ -287,12 +287,12 @@ const App = () => {
                   </span>
                 </Button>
                 {
-                  instagram ? (
+                  process.env.NEXT_PUBLIC_IG_PROFILE_NAME ? (
                     <Button
                       title="Veja nosso perfil no Instagram"
                       sx={{ '--clr': '#e4405f', '--txt': '#fefeff', '--sd': '#e4405f4a' }}
                       onClick={() => {
-                        window.open(`https://instagram.com/${instagram}`, '_blank', 'noopener,noreferrer');
+                        window.open(`https://instagram.com/${process.env.NEXT_PUBLIC_IG_PROFILE_NAME}`, '_blank', 'noopener,noreferrer');
                       }}
                     >
                       <span className="icon-default">
